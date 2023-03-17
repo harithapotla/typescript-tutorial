@@ -40,7 +40,7 @@ const TodoList: React.FC<props> = ({
           </div>
         )}
       </Droppable>
-      <Droppable droppableId="TodosRemove">
+      <Droppable droppableId="TodoRemove">
         {(provided, snapshot) => (
           <div
             ref={provided.innerRef}

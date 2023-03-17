@@ -8,8 +8,8 @@ import { Todo } from "./models/models";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
-  const [todos, setTodos] = useState<Array<Todo>>([]);
-  const [CompletedTodos, setCompletedTodos] = useState<Array<Todo>>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [CompletedTodos, setCompletedTodos] = useState<Todo[]>([]);
 
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,6 +40,7 @@ const App: React.FC = () => {
     let active = todos;
     let complete = CompletedTodos;
     // Source Logic
+    
     if (source.droppableId === "TodosList") {
       add = active[source.index];
       active.splice(source.index, 1);
@@ -49,7 +50,7 @@ const App: React.FC = () => {
     }
 
     // Destination Logic
-    if (destination.droppableId === "TodosList") {
+    if (destination.droppableId === "TodoRemove") {
       active.splice(destination.index, 0, add);
     } else {
       complete.splice(destination.index, 0, add);
@@ -57,6 +58,7 @@ const App: React.FC = () => {
 
     setCompletedTodos(complete);
     setTodos(active);
+  
   };
 
   return (
