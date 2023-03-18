@@ -41,7 +41,7 @@ const App: React.FC = () => {
     let complete = CompletedTodos;
     // Source Logic
     
-    if (source.droppableId === "TodosList") {
+    if (source.droppableId === "TodoList") {
       add = active[source.index];
       active.splice(source.index, 1);
     } else {
