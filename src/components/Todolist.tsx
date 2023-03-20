@@ -52,12 +52,12 @@ const TodoList: React.FC<props> = ({
             <span className="todos__heading">Completed Tasks</span>
             {CompletedTodos?.map((todo, index) => (
               <SingleTodo
-                index={index}
-                todos={CompletedTodos}
-                todo={todo}
-                key={todo.id}
-                setTodos={setCompletedTodos}
-              />
+              index={index}
+              todos={CompletedTodos}
+              todo={todo}
+              key={todo.id}
+              setTodos={setCompletedTodos}
+            />
             ))}
             {provided.placeholder}
           </div>
